@@ -19,17 +19,27 @@
             <div class="my-app-name" href="#">Ski Trackr</div>
           </div>
           <ul class="nav navbar-nav navbar-right">
-            <li><a href="#"><span id="open-snowflake-trip-menu" class="glyphicon glyphicon-asterisk"></span></a></li>
-            <li data-toggle="dropdown" class="dropdown-toggle"><a href="#"><span class="glyphicon glyphicon-user"></span></a></li>
-            <ul class="dropdown-menu">
-              <li id="sign-up-modal"><a href="#">Sign Up</a></li>
-              <li id="sign-in-modal"><a href="#">Sign In</a></li>
-              <li id="chng-pw-modal"><a href="#">Change My Password</a></li>
-              <li id="sign-out-modal"><a href="#">Sign Out</a></li>
-            </ul>
+            <div class="dropdown">
+              <li data-toggle="dropdown" class="dropdown-toggle"><a href="#"><span id="open-snowflake-trip-menu" class="glyphicon glyphicon-asterisk"></span></a></li>
+              <ul class="dropdown-menu">
+                <li id="log-my-trip-modal"><a href="#">Log My Trip</a></li>
+                <li id="show-all-my-trips-modal"><a href="#">Show All My Trips</a></li>
+              </ul>
+            </div>
+            <div class="dropdown">
+              <li data-toggle="dropdown" class="dropdown-toggle"><a href="#"><span class="glyphicon glyphicon-user"></span></a></li>
+              <ul class="dropdown-menu">
+                <li id="sign-up-modal"><a href="#">Sign Up</a></li>
+                <li id="sign-in-modal"><a href="#">Sign In</a></li>
+                <li id="chng-pw-modal"><a href="#">Change My Password</a></li>
+                <li id="sign-out-modal"><a href="#">Sign Out</a></li>
+                <li class="divider"></li>
+                <li id="select-view-trip-history-btn"><a href="#">View My Trip History</a></li>
+              </ul>
+            </div>
           </ul>
         </div>
-        <!-- <div id="alert-id" class="alert alert-success alert-styling">Item added to cart</div> -->
+        <div id="alert-id" class="alert alert-success alert-styling">New Trip has been recorded!</div>
       </nav>
 
       <div class="container-fluid">
