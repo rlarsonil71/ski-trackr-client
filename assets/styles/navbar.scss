@@ -1,0 +1,17 @@
+// Sets background color and padding for navbar
+nav.my-navbar.navbar {
+  background: $background-dark;
+  border-radius: 0;
+  margin: 0;
+  padding-left: 8px;
+  padding-right: 8px;
+  position: fixed;
+  z-index: 1;
+}
+
+// Styling for how Ski Trackr name is displayed in navbar header
+.my-app-name {
+  color: $white;
+  font-size: 20px;
+  line-height: 55px;
+}

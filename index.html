@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-      <title>Example</title>
+      <title>Ski Trackr</title>
       <meta name="viewport" content="width=device-width, initial-scale=1">
 
       <!-- Do not add `link` tags unless you know what you are doing -->
@@ -11,15 +11,116 @@
       <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
     </head>
-    <body class="container-fluid">
-      <h1>Example</h1>
+    <body>
+      <!-- Nav bar for trip resource and user authentication -->
+      <nav class="my-navbar navbar navbar-fixed-top">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <div class="my-app-name" href="#">Ski Trackr</div>
+          </div>
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="#"><span id="open-snowflake-trip-menu" class="glyphicon glyphicon-asterisk"></span></a></li>
+            <li data-toggle="dropdown" class="dropdown-toggle"><a href="#"><span class="glyphicon glyphicon-user"></span></a></li>
+            <ul class="dropdown-menu">
+              <li id="sign-up-modal"><a href="#">Sign Up</a></li>
+              <li id="sign-in-modal"><a href="#">Sign In</a></li>
+              <li id="chng-pw-modal"><a href="#">Change My Password</a></li>
+              <li id="sign-out-modal"><a href="#">Sign Out</a></li>
+            </ul>
+          </ul>
+        </div>
+        <!-- <div id="alert-id" class="alert alert-success alert-styling">Item added to cart</div> -->
+      </nav>
 
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-      eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-      minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
-      ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-      velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-      cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
-      est laborum.</p>
+      <div class="container-fluid">
+        <!-- START Sign-Up-Modal -->
+        <div class="modal fade" id="mySignUpModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                  <h4 class="modal-title" id="myModalLabel">Sign-up</h4>
+                </div>
+                <div class="modal-body">
+                   <form id="sign-up">
+                     <div class="form-group">
+                       <label for="name">Email</label>
+                       <input type="text" name="credentials[email]" class="form-control" placeholder="Email">
+                       <label for="name">Password</label>
+                       <input type="password" name="credentials[password]" class="form-control" placeholder="Password">
+                       <label for="name">Password Confirmation</label>
+                       <input type="password" name="credentials[password_confirmation]" class="form-control" placeholder="Confirm Password">
+                     </div>
+                     <input type="submit" class="btn btn-default" name="submit" value="Sign up!">
+                     <button type="submit" class="btn btn-default" data-dismiss="modal">Close</button>
+                     <h5 class="form-error" id="tempSignUpError"></h5>
+                   </form>
+                </div>
+              </div>
+            </div>
+        </div>
+        <!-- END Sign-Up-Modal -->
+
+        <!-- START Sign-In-Modal -->
+        <div class="modal fade" id="mySignInModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                  <h4 class="modal-title" id="myModalLabel">Sign-in</h4>
+                </div>
+                <div class="modal-body">
+                   <form id="sign-in">
+                     <div class="form-group">
+                       <label for="name">Email</label>
+                       <input type="text" name="credentials[email]" class="form-control" placeholder="Email">
+                       <label for="name">Password</label>
+                       <input type="password" name="credentials[password]" class="form-control" placeholder="Password">
+                     </div>
+                     <input type="submit" class="btn btn-default" name="submit" value="Sign in!">
+                     <button type="submit" class="btn btn-default" data-dismiss="modal">Close</button>
+                     <h5 class="form-error" id="tempSignInError"></h5>
+                   </form>
+                </div>
+              </div>
+            </div>
+        </div>
+        <!-- END Sign-In-Modal -->
+
+        <!-- START Change-Password-Modal -->
+        <div class="modal fade" id="myPwChangeModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                  <h4 class="modal-title" id="myModalLabel">Change Password</h4>
+                </div>
+                <div class="modal-body">
+                   <form id="change-password">
+                     <div class="form-group">
+                       <label for="name">Old Password</label>
+                       <input type="password" name="passwords[old]" class="form-control" placeholder="Old Password">
+                       <label for="name">New Password</label>
+                       <input type="password" name="passwords[new]" class="form-control" placeholder="New Password">
+                     </div>
+                     <input type="submit" class="btn btn-default" name="submit" value="Change Password!">
+                     <button type="submit" class="btn btn-default" data-dismiss="modal">Close</button>
+                     <h5 class="form-error" id="tempChangePasswordError"></h5>
+                   </form>
+                </div>
+              </div>
+            </div>
+        </div>
+        <!-- END Change-Password-Modal -->
+      </div>
+      <!--we shouldn't need the below scripts.  Browser template takes care of loading jQuery, boostrap js, etc.-->
+      <!-- Bootstrap core JavaScript
+      ================================================== -->
+      <!-- Placed at the end of the document so the pages load faster -->
+      <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+      <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+      <script src="../../dist/js/bootstrap.min.js"></script> -->
+      <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+      <!-- <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script> -->
     </body>
 </html>

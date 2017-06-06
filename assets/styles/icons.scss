@@ -1,0 +1,33 @@
+// Determines the hover color of a link.
+// Setting the color to equal the navbar background color
+.navbar .navbar-nav > li > a:hover, .navbar .navbar-nav > li > a:focus {
+    background-color: $background-dark;
+}
+
+// Sets size, color, and hover color for SNOWFLAKE glyphicon
+.glyphicon-asterisk {
+  font-size: 20px;
+  color: $white;
+}
+.glyphicon-asterisk:hover {
+  font-size: 20px;
+  color: $icon-highlight-blue;
+}
+
+// .glyphicon-snowflake {
+//   font-size: 20px;
+//   color: $white;
+// }
+// .glyphicon-snowflake:hover {
+//   font-size: 20px;
+//   color: $icon-highlight-blue;
+// }
+
+// Sets size, color, and hover color for USER profile glyphicon
+.glyphicon-user {
+  font-size: 20px;
+  color: $white;
+}
+.glyphicon-user:hover {
+  color: $icon-highlight-blue;
+}
