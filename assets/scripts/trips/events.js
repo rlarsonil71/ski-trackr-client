@@ -15,6 +15,25 @@ const onCreateTrip = function (events) {
   const data = getFormFields(event.target)
   console.log('(trips/event.js) onCreatePlayer Data: ', data)
 
+  const todayDate = new Date().toJSON().slice(0, 10).replace(/-/g, '/')
+  // This converts the string version of date to an actual date version for
+  //  comparison to ensure a user cannot enter a trip AFTER today's date.
+  const tripEnteredDate = new Date(data.trip.tripDate).toJSON().slice(0, 10).replace(/-/g, '/')
+
+  if (tripEnteredDate > todayDate) { // Can't create a trip after TODAY
+    // Display error text in LOG MY TRIP modal footer back to user to select a
+    //  date that is today's date or a previous date.
+    console.log('(trips/events.js) Invalid entered date! ' + tripEnteredDate + ' > ' + todayDate + ' (today)')
+    tripUserText.logMyTripFutureDateError()
+    return
+  }
+
+  // Set formatted trip entered date to data.trip.tripDate for rendering
+  console.log('(trips/events.js) Trip Date: ' + data.trip.tripDate + ' Trip Entered Date: ' + tripEnteredDate)
+
+  data.trip.tripDate = tripEnteredDate
+  console.log('(trips/events.js) Trip Date: ', data.trip.tripDate)
+
   // Need to get FILLED IN `trip` object so that it can be passed to tripApi
   //  that will do a CREATE (POST) of that trip to the database
 

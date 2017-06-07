@@ -14,6 +14,9 @@ const createTripSuccess = function () {
   // Close LOG MY TRIP modal
   $('#myLogMyTripModal').modal('toggle')
 
+  // Clear modal body form text in LOG MY TRIP modal
+  $('#log-my-trip').trigger('reset')
+
   helpers.showAlert($('#alert-id'))
 }
 
