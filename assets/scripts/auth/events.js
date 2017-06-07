@@ -58,15 +58,17 @@ const onSignOut = function (event) {
 }
 
 const showSignUpModal = function (event) {
-  console.log('this should toggle sign-up modal')
+  // console.log('this should toggle sign-up modal')
   $('#mySignUpModal').modal('toggle')
 }
 
 const showSignInModal = function (event) {
+  // console.log('this should toggle sign-in modal')
   $('#mySignInModal').modal('toggle')
 }
 
 const showChangePasswordModal = function (event) {
+  // console.log('this should toggle change-password modal')
   $('#myPwChangeModal').modal('toggle')
 }
 
