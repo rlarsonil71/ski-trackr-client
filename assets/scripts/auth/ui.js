@@ -4,7 +4,7 @@ const store = require('../store')
 
 // const productEvents = require('../products/events.js')
 // const orderUi = require('../orders/ui.js')
-const userText = require('./userText')
+const authUserText = require('./userText')
 
 const signUpSuccess = (ajaxResponse) => {
   console.log('(auth/ui.js) signUpSuccess ran!  Data is :', ajaxResponse)
@@ -36,6 +36,9 @@ const signInSuccess = (ajaxResponse) => {
   $('#sign-up-modal').hide()
   $('#sign-in-modal').hide()
 
+  // Upon successful SIGN IN, show Trip dropdown modal
+  $('#trip-dropdown-modal').show()
+
   console.log('(auth/ui.js) signInSuccess ran!  Data is :', ajaxResponse)
 
   // Close SIGN IN modal
@@ -66,7 +69,7 @@ const signInFailure = (error) => {
   $('#sign-in').trigger('reset')
 
   // Tell user that there is an error
-  userText.signInError()
+  authUserText.signInError()
 }
 
 const changePasswordSuccess = (ajaxResponse) => {
@@ -76,7 +79,7 @@ const changePasswordSuccess = (ajaxResponse) => {
   $('#change-password').trigger('reset')
 
   // Tell user that password was successfully changed
-  userText.changePasswordSuccess()
+  authUserText.changePasswordSuccess()
 }
 
 const changePasswordFailure = (error) => {
@@ -87,7 +90,7 @@ const changePasswordFailure = (error) => {
   $('#change-password').trigger('reset')
 
   // Tell user that there is an error
-  userText.changePasswordError()
+  authUserText.changePasswordError()
 }
 
 const signOutSuccess = () => {
@@ -98,6 +101,9 @@ const signOutSuccess = () => {
   // Upon successful SIGN OUT, hide Change Password and Sign Out dropdown menu options
   $('#chng-pw-modal').hide()
   $('#sign-out-modal').hide()
+
+  // Upon successful SIGN OUT, hide Trip dropdown modal
+  $('#trip-dropdown-modal').hide()
 
   console.log('(auth/ui.js) signOutSuccess ran!  Nothing was returned')
 
