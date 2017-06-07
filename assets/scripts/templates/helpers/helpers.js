@@ -1,8 +1,8 @@
 'use strict'
-// const store = require('../store')
 
 const hideAlerts = () => {
-  $('#alert-id').hide()
+  $('#alert-sign-in-id').hide()
+  $('#alert-new-trip-id').hide()
 }
 
 const showAlert = function (message) {

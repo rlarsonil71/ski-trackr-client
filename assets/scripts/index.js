@@ -38,8 +38,9 @@ $(() => {
   // Upon page load, hide Trip dropdown modal
   $('#trip-dropdown-modal').hide()
 
-  // Upon page load, hide Alert Id popup text
-  $('#alert-id').hide()
+  // Upon page load, hide Alert Id popup text messages
+  $('#alert-sign-in-id').hide()
+  $('#alert-new-trip-id').hide()
 })
 
 // use require with a reference to bundle the file and use it in this file

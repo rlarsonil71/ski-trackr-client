@@ -1,6 +1,7 @@
 'use strict'
 
 const store = require('../store')
+const helpers = require('../templates/helpers/helpers')
 
 // const productEvents = require('../products/events.js')
 // const orderUi = require('../orders/ui.js')
@@ -52,6 +53,9 @@ const signInSuccess = (ajaxResponse) => {
 
   // Clear modal body text in SIGN IN modal
   $('#sign-in').trigger('reset')
+
+  // Show user alert that the user has successfully signed in.
+  helpers.showAlert($('#alert-sign-in-id'))
 
   // Show View Order History modal button since user signed in
   // orderUi.showViewOrderHistoryBtn()

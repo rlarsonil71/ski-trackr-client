@@ -17,7 +17,8 @@ const createTripSuccess = function () {
   // Clear modal body form text in LOG MY TRIP modal
   $('#log-my-trip').trigger('reset')
 
-  helpers.showAlert($('#alert-id'))
+  // Show user alert that a new trip was successfully logged.
+  helpers.showAlert($('#alert-new-trip-id'))
 }
 
 const createTripFailure = (error) => {
