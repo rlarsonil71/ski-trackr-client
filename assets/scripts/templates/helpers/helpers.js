@@ -2,6 +2,7 @@
 
 const hideAlerts = () => {
   $('#alert-sign-in-id').hide()
+  $('#alert-chg-pwd-id').hide()
   $('#alert-sign-out-id').hide()
   $('#alert-new-trip-id').hide()
 }

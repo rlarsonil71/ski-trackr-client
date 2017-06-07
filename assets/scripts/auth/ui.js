@@ -80,6 +80,8 @@ const changePasswordSuccess = (ajaxResponse) => {
 
   // Tell user that password was successfully changed
   authUserText.changePasswordSuccess()
+  // Show user alert that the user has successfully signed in.
+  helpers.showAlert($('#alert-chg-pwd-id'))
 }
 
 const changePasswordFailure = (error) => {
