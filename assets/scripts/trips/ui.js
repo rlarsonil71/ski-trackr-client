@@ -1,5 +1,7 @@
 'use strict'
 const store = require('../store')
+const helpers = require('../templates/helpers/helpers')
+
 const tripApi = require('./api')
 
 const errorTextNoCurrentTrips = 'You have no current trips.  Please log a trip!'
@@ -11,6 +13,8 @@ const createTripSuccess = function () {
 
   // Close LOG MY TRIP modal
   $('#myLogMyTripModal').modal('toggle')
+
+  helpers.showAlert($('#alert-id'))
 }
 
 const createTripFailure = (error) => {
