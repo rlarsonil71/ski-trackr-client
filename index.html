@@ -19,14 +19,14 @@
             <div class="my-app-name" href="#">Ski Trackr</div>
           </div>
           <ul class="nav navbar-nav navbar-right">
-            <div class="dropdown">
+            <div class="dropdown" id="trip-dropdown-modal">
               <li data-toggle="dropdown" class="dropdown-toggle"><a href="#"><span id="open-snowflake-trip-menu" class="glyphicon glyphicon-asterisk"></span></a></li>
               <ul class="dropdown-menu">
                 <li id="log-my-trip-modal"><a href="#">Log My Trip</a></li>
                 <li id="show-all-my-trips-modal"><a href="#">Show All My Trips</a></li>
               </ul>
             </div>
-            <div class="dropdown">
+            <div class="dropdown" id="user-dropdown-modal">
               <li data-toggle="dropdown" class="dropdown-toggle"><a href="#"><span class="glyphicon glyphicon-user"></span></a></li>
               <ul class="dropdown-menu">
                 <li id="sign-up-modal"><a href="#">Sign Up</a></li>
@@ -135,11 +135,14 @@
                    <form id="log-my-trip">
                      <div class="form-group">
                        <label for="name">Trip Date</label>
-                       <input type="date" name="trip[tripDate]" class="form-control" placeholder="Trip Date">
+                       <input id="date" type="date" name="trip[tripDate]" class="form-control" placeholder="Trip Date">
                        <label for="name">Resort</label>
                        <input type="text" name="trip[resort]" class="form-control" placeholder="Resort">
-                       <label for="name">Equipment Type</label>
-                       <input type="text" name="trip[equipmentType]" class="form-control" placeholder="Equipment Type">
+                       <label for="name">Equipment Type</label><br>
+                       <form>
+                         <input type="radio" name="trip[equipmentType]" value="Ski" checked> Ski<br>
+                         <input type="radio" name="trip[equipmentType]" value="Snowboard"> Snowboard<br>
+                       </form>
                        <label for="name">Conditions</label>
                        <input type="text" name="trip[conditions]" class="form-control" placeholder="Conditions">
                        <label for="name">Number of Runs</label>
