@@ -2,6 +2,7 @@
 
 const hideAlerts = () => {
   $('#alert-sign-in-id').hide()
+  $('#alert-sign-out-id').hide()
   $('#alert-new-trip-id').hide()
 }
 
@@ -12,5 +13,6 @@ const showAlert = function (message) {
 }
 
 module.exports = {
-  showAlert
+  showAlert,
+  hideAlerts
 }

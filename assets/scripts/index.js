@@ -2,6 +2,8 @@
 
 const setAPIOrigin = require('../../lib/set-api-origin')
 const config = require('./config')
+const helpers = require('./templates/helpers/helpers')
+
 const authEvents = require('./auth/events.js')
 const tripEvents = require('./trips/events.js')
 
@@ -39,8 +41,7 @@ $(() => {
   $('#trip-dropdown-modal').hide()
 
   // Upon page load, hide Alert Id popup text messages
-  $('#alert-sign-in-id').hide()
-  $('#alert-new-trip-id').hide()
+  helpers.hideAlerts()
 })
 
 // use require with a reference to bundle the file and use it in this file

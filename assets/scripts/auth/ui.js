@@ -114,6 +114,9 @@ const signOutSuccess = () => {
   store.user = null
   console.log('store is: ', store)
 
+  // Show user alert that the user has successfully signed out.
+  helpers.showAlert($('#alert-sign-out-id'))
+
   // On sign out, show all products without the `Add to Cart` button for each
   //  product.
   // productEvents.onGetAllProducts()
