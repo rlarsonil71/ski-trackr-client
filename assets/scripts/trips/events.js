@@ -42,7 +42,8 @@ const onIndexTrips = function (event) {
   event.preventDefault()
   console.log('(trips/events.js) onIndexTrips ran!')
 
-  $('#myViewTripHistoryModal').modal('toggle')
+  // Display the Show-All-My-Trips-Modal
+  $('#myShowAllMyTripsModal').modal('toggle')
 
   // Don't need to use data object here!
   tripApi.indexTrips()
@@ -102,14 +103,16 @@ const addTripHandlers = () => {
   $('#log-my-trip-modal').on('click', showLogMyTripModal)
   $('#show-all-my-trips-modal').on('click', showAllMyTripsModal)
 
-  // Set up TRIP form submit event handlers
+  // Set up TRIP form submit event handler for Creating a New Trip
   $('#log-my-trip').on('submit', onCreateTrip)
 
+  // Set up TRIP click event handler for Showing all My Trips
+  $('#show-all-my-trips-modal').on('click', onIndexTrips)
+
   // *** TBD ***
-
-  // $('#show-all-my-trips-modal').on('submit', onIndexTrips)
-
-  $('#select-view-trip-history-btn').on('click', onIndexTrips)
+  // Set up event handler for VIEW TRIP HISTORY
+  //
+  // $('#select-view-trip-history-btn').on('click', onIndexTrips)
 
   // Set up click event handler to Set New Rating in View Trip History
   $(document).on('click', '.setTripRatingBtn', onUpdateTripRating)
@@ -122,6 +125,5 @@ const addTripHandlers = () => {
 }
 
 module.exports = {
-  addTripHandlers,
-  onCreateTrip
+  addTripHandlers
 }
