@@ -57,6 +57,12 @@ const signInSuccess = (ajaxResponse) => {
   // Show user alert that the user has successfully signed in.
   helpers.showAlert($('#alert-sign-in-id'))
 
+  // Show user alert telling user to log a trip or view all trips.
+  // DELAY 3 seconds for user to read text in alert before showing new alert
+  window.setTimeout(function () {
+    helpers.showAlert($('#alert-log-trip-on-signin-id'))
+  }, 3000)
+
   // Show View Order History modal button since user signed in
   // orderUi.showViewOrderHistoryBtn()
 }
