@@ -1,0 +1,31 @@
+{{#each trips as |trip|}}
+
+  <div class="tripWrapper" data-id="{{trip.id}}">
+    <div class="tripDate" id="tripDate{{trip.id}}">
+      Trip Date: {{trip.tripDate}}
+    </div>
+    <div class="resort" id="resort{{trip.id}}">
+      Resort: {{trip.resort}}
+    </div>
+    <div class="equipmentType" id="equipmentType{{trip.id}}">
+      Equipment Type: {{trip.equipmentType}}
+    </div>
+    <div class="conditions" id="conditions{{trip.id}}">
+      Conditions: {{trip.conditions}}
+    </div>
+    <div class="numberOfRuns" id="numberOfRuns{{trip.id}}">
+      Number of Runs: {{trip.numberOfRuns}}
+    </div>
+    <div class="favoriteRun" id="favoriteRun{{trip.id}}">
+      My favorite run of the day: {{trip.favoriteRun}}
+    </div>
+    <div class="comments" id="comments{{trip.id}}">
+      How did the day go?: {{trip.comments}}
+    </div>
+    <div class="updateAndRemoveBtn">
+      <button class="setTripUpdateBtn btn btn-primary btn-xs" id="{{trip.id}}" data-id="{{trip.id}}">Update Trip</button>
+      <button class="removeFromTripHistoryBtn glyphicon glyphicon-trash" id="{{trip.id}}" data-id="{{trip.id}}"></button>
+    </div><br><hr />
+  </div>
+
+{{/each}}

@@ -43,7 +43,7 @@ const onIndexTrips = function (event) {
   console.log('(trips/events.js) onIndexTrips ran!')
 
   // Display the Show-All-My-Trips-Modal
-  $('#myShowAllMyTripsModal').modal('toggle')
+  // $('#myShowAllMyTripsModal').modal('toggle')
 
   // Don't need to use data object here!
   tripApi.indexTrips()

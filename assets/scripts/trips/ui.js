@@ -45,10 +45,8 @@ const indexTripsSuccess = function (ajaxResponse) {
 
     // Build handlebars HTML showing a display of all trips for current user
 
-    // *** TBD ***
-
-    // const displayAllTrips = require('../templates/display-view-trip-history.handlebars')
-    // $('#display-trips').prepend(displayAllTrips(trips))
+    const displayAllTrips = require('../templates/display-all-my-trips.handlebars')
+    $('#display-trips').prepend(displayAllTrips(trips))
   }
 }
 
