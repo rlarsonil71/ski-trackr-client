@@ -47,7 +47,7 @@ const signInSuccess = (ajaxResponse) => {
 
   // Store user object
   store.user = ajaxResponse.user
-  console.log('ui.js: signInSuccess - store is: ', store)
+  console.log('(auth/ui.js) signInSuccess - store is: ', store)
 
   // const products = store.products
 

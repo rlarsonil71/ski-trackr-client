@@ -9,6 +9,7 @@ const tripEvents = require('./trips/events.js')
 
 $(() => {
   setAPIOrigin(location, config)
+
   // Upon page load, hide all views except views passed in array to showView
   // View options are 'header-view' 'drawer-view' 'sign-in-view' 'sign-up-view' 'change-password-view'
   // console.log('Page loaded')
@@ -28,6 +29,9 @@ $(() => {
   // Clear text from click event handlers for TRIP resource
   $('#log-my-trip-modal').on('click', function () { $('#tempLogMyTripError').html('') })
   $('#log-my-trip-modal').on('click', function () { $('#log-my-trip').find('input:text, select, textarea').val('') })
+
+  $('.setUpdateTripBtn').on('click', function () { $('#tempUpdateMyTripError').html('') })
+  $('.setUpdateTripBtn').on('click', function () { $('#handlebars-update-my-trip-form').find('input:text, select, textarea').val('') })
 
   // Upon page load, hide Change Password and Sign Out dropdown menu options
   $('#chng-pw-modal').hide()
