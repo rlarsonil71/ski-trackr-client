@@ -1,6 +1,9 @@
 'use strict'
+
 const store = require('../store')
 const helpers = require('../templates/helpers/helpers')
+
+const showUpdateMyTripTemplate = require('../templates/update-my-trip.handlebars')
 
 const tripApi = require('./api')
 
@@ -48,7 +51,10 @@ const indexTripsSuccess = function (ajaxResponse) {
     console.log('(trips/ui.js) Number of current trips for current user is: ', trips.trips.length)
 
     // Build handlebars HTML showing a display of all trips for current user
-
+    // Sort trips by tripDate so they are always in the same order.
+    trips.trips.sort(function (a, b) {
+      return a.resort - b.resort
+    })
     const displayAllTrips = require('../templates/display-all-my-trips.handlebars')
     $('#display-trips').prepend(displayAllTrips(trips))
   }
@@ -59,8 +65,43 @@ const indexTripsFailure = (error) => {
   console.error(error)
 }
 
-const updateTripRatingSuccess = function (ajaxResponse) {
-  console.log('(trips/ui.js) updateTripRatingSuccess ran!  Data is :', ajaxResponse)
+const showTripSuccess = function (ajaxResponse) {
+  // event.preventDefault()
+
+  console.log('(trips/ui.js) showTripSuccess ran! - Data is :', ajaxResponse)
+
+  // Store returned trip object
+  store.trip = ajaxResponse.trip
+
+  const tripId = ajaxResponse.trip.id
+
+  console.log('(trips/ui.js) showTripSuccess - Selected Trip is: ', ajaxResponse.trip)
+  console.log('(trips/ui.js) showTripSuccess - Trip ID is: ', tripId)
+
+  // Clear handlebars-update-my-trip-form content
+  $('#handlebars-update-my-trip-form').empty()
+
+  // Build handlebars HTML showing UPDATE FORM to have current user update data
+  //  about selected trip
+
+  const showUpdateMyTripHtml = showUpdateMyTripTemplate({ trip: ajaxResponse.trip })
+  $('#handlebars-update-my-trip-form').html(showUpdateMyTripHtml)
+
+  // const resort = $('#resort' + tripId).val()
+  // console.log('(trips/events.js) onUpdateTrip - Resort is: ', resort)
+
+  // tripApi.updateTrip(tripId, resort)
+  //   .then(tripUi.updateTripSuccess)
+  //   .catch(tripUi.updateTripFailure)
+}
+
+const showTripFailure = (error) => {
+  console.log('(trips/ui.js) showTripFailure  Error is :', error)
+  console.error(error)
+}
+
+const updateTripSuccess = function (ajaxResponse) {
+  console.log('(trips/ui.js) updateTripSuccess ran!  Data is :', ajaxResponse)
 
   // Show updated trip rating to user
   tripApi.indexTrips()
@@ -68,7 +109,7 @@ const updateTripRatingSuccess = function (ajaxResponse) {
     .catch(indexTripsFailure)
 }
 
-const updateTripRatingFailure = (error) => {
+const updateTripFailure = (error) => {
   console.log('(trips/ui.js) updateTripRatingFailure  Error is :', error)
   console.error(error)
 }
@@ -79,8 +120,6 @@ const deleteTripSuccess = function (id) {
   // Remove deleted trip from rendering in view trip history
   $("div[data-id='" + id + "']").remove()
   console.log('(trips/ui.js) deleteTripSuccess ran! - ID: ', id)
-
-  // *** TBD *** - Remove trip from Display All Trips display
 }
 
 const deleteTripFailure = (error) => {
@@ -107,8 +146,10 @@ module.exports = {
   createTripFailure,
   indexTripsSuccess,
   indexTripsFailure,
-  updateTripRatingSuccess,
-  updateTripRatingFailure,
+  showTripSuccess,
+  showTripFailure,
+  updateTripSuccess,
+  updateTripFailure,
   deleteTripSuccess,
   deleteTripFailure,
   showViewTripHistoryBtn,
