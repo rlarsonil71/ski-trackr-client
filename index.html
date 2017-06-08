@@ -19,15 +19,7 @@
             <div class="my-app-name" href="#">Ski Trackr</div>
           </div>
           <ul class="nav navbar-nav navbar-right">
-            <div class="dropdown" id="trip-dropdown-modal">
-              <li data-toggle="dropdown" class="dropdown-toggle"><a href="#"><span id="open-snowflake-trip-menu" class="glyphicon glyphicon-asterisk"></span></a></li>
-              <ul class="dropdown-menu">
-                <li id="log-my-trip-modal"><a href="#">Log My Trip</a></li>
-                <li id="show-all-my-trips-modal"><a href="#">Show All My Trips</a></li>
-              </ul>
-            </div>
-            <div class="dropdown" id="user-dropdown-modal">
-              <li data-toggle="dropdown" class="dropdown-toggle"><a href="#"><span class="glyphicon glyphicon-user"></span></a></li>
+              <li data-toggle="dropdown" class="dropdown-toggle" id="user-dropdown-menu"><a href="#"><span class="glyphicon glyphicon-user"></span></a></li>
               <ul class="dropdown-menu">
                 <li id="sign-up-modal"><a href="#">Sign Up</a></li>
                 <li id="sign-in-modal"><a href="#">Sign In</a></li>
@@ -36,12 +28,18 @@
                 <li class="divider"></li>
                 <li id="select-view-trip-history-btn"><a href="#">View My Trip History</a></li>
               </ul>
-            </div>
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+              <li data-toggle="dropdown" class="dropdown-toggle" id="trip-dropdown-menu"><a href="#"><span id="open-snowflake-trip-menu" class="glyphicon glyphicon-asterisk"></span></a></li>
+              <ul class="dropdown-menu">
+                <li id="log-my-trip-modal"><a href="#">Log My Trip</a></li>
+                <li id="show-all-my-trips-modal"><a href="#">Show All My Trips</a></li>
+              </ul>
           </ul>
         </div>
         <div id="alert-sign-in-id" class="alert alert-success alert-styling">Thanks for signing in!    Enjoy!!</div>
         <div id="alert-chg-pwd-id" class="alert alert-success alert-styling">Your password has been successfully changed!</div>
-        <div id="alert-sign-out-id" class="alert alert-success alert-styling">You have been logged out!   Let's hope that tomorow is a POWDER day!!</div>
+        <div id="alert-sign-out-id" class="alert alert-success alert-styling">You have been logged out!   <br>Let's hope that tomorow is a POWDER day!!</div>
         <div id="alert-log-trip-on-signin-id" class="alert alert-success alert-styling">Please Log a New Trip or Show All Your Past Trips!</div>
         <div id="alert-new-trip-id" class="alert alert-success alert-styling">New Trip has been recorded!</div>
         <div id="alert-update-trip-id" class="alert alert-success alert-styling">Your trip has been successfully updated!</div>
