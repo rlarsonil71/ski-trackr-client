@@ -1,0 +1,38 @@
+<!-- Update Trip input form -->
+<div data-id="{{trip.id}}" id="updateForm{{trip.id}}" class='form-group updateDiv'>
+  <form data-id="{{trip.id}}" id="update-my-trip" class='form-group updateForm'>
+    <div class="form-group">
+      <label for="name">Trip Date</label>
+      <input id="date" type="date" name="trip[tripDate]" class="form-control" value="{{date trip.tripDate}}" placeholder="Trip Date">
+      <label for="name">Resort</label>
+      <input type="text" name="trip[resort]" class="form-control" value="{{trip.resort}}" placeholder="Resort">
+      <label for="name">Equipment Type</label><br>
+      <input type="radio" name="trip[equipmentType]" value="{{trip.equipmentType}}" checked> Ski<br>
+      <input type="radio" name="trip[equipmentType]" value="{{trip.equipmentType}}"> Snowboard<br>
+      <label for="name">Conditions</label>
+      <input type="text" name="trip[conditions]" class="form-control" value="{{trip.conditions}}" placeholder="Conditions">
+      <label for="name">Number of Runs</label>
+      <input type="text" name="trip[numberOfRuns]" class="form-control" value="{{trip.numberOfRuns}}" placeholder="How many runs did you do?">
+      <label for="name">Favorite Run</label>
+      <input type="text" name="trip[favoriteRun]" class="form-control" value="{{trip.favoriteRun}}" placeholder="What was your favorite run?">
+      <label for="name">Comments</label>
+      <input type="text" name="trip[comments]" class="form-control" value="{{trip.comments}}" placeholder="How did it go?"><br>
+      <div class="saveUpdateBtn">
+        <button type="submit" class="btn btn-primary btn-xs" id="{{trip.id}}" data-id="{{trip.id}}">Update My Trip!</button>
+      </div>
+    </div>
+  </form>
+</div>
+
+<!-- <input type="submit" class="btn btn-default" id="save-update-button" name="submit" value="Update My Trip!"> -->
+
+<!-- <button class="removeTripFromMyTripListBtn glyphicon glyphicon-trash" id="{{trip.id}}" data-id="{{trip.id}}"></button> -->
+
+<!-- <form data-id="{{trip.id}}" id="updateTripForm" class='text-left form-group updateForm'>
+  <input type="text" name="trip[team_name]" id='update-player-team-name' value="{{trip.team_name}}" placeholder="Team Name"> Team Name<br>
+  <input type="text" name="trip[sport]" id='update-player-sport' value="{{trip.sport}}" placeholder="Sport"> Sport<br>
+  <input type="text" name="trip[position]" id='update-player-position' value="{{trip.position}}" placeholder="Position"> Position<br>
+  <input type="text" name="trip[player_number]" id='update-player-player-number' value="{{trip.player_number}}" placeholder="Trip Number"> Trip Number<br>
+  <br>
+  <input type="submit" id='save-id' data-id="{{trip.id}}" class="btn btn-success save-update-button" value='Update Trip'>
+</form> -->
