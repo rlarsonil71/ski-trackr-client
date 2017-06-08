@@ -2,7 +2,7 @@
 
 const config = {
   apiOrigins: {
-    production: 'https://protected-gorge-95856.herokuapp.com/'
+    production: 'https://protected-gorge-95856.herokuapp.com'
   }
 }
 
