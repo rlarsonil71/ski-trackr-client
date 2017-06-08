@@ -44,8 +44,8 @@ const onCreateTrip = function (event) {
     // Set formatted trip entered date to data.trip.tripDate for rendering
     console.log('(trips/events.js) Trip Date: ' + data.trip.tripDate + ' Trip Entered Date: ' + tripEnteredDate)
 
-    data.trip.tripDate = tripEnteredDate
-    console.log('(trips/events.js) Trip Date: ', data.trip.tripDate)
+    // data.trip.tripDate = tripEnteredDate
+    // console.log('(trips/events.js) Trip Date: ', data.trip.tripDate)
 
     tripUserText.logMyTripSuccess()
 
@@ -124,19 +124,20 @@ const onSaveUpdatedTrip = function (event) {
     // Set formatted trip entered date to data.trip.tripDate for rendering
     console.log('(trips/events.js) Trip Date: ' + data.trip.tripDate + ' Trip Entered Date: ' + tripEnteredDate)
 
-    data.trip.tripDate = tripEnteredDate
-    console.log('(trips/events.js) Trip Date: ', data.trip.tripDate)
+    // data.trip.tripDate = tripEnteredDate
+    // console.log('(trips/events.js) Trip Date: ', data.trip.tripDate)
 
     tripUserText.updateMyTripSuccess()
 
     console.log('(trips/events.js) onSaveUpdatedTrip - Ready to call UPDATE AJAX PATCH for trip!')
 
-    // *** TBD *** THIS IS THE CALL TO UPDATE PATCH!!!!!!!!!!!!!!!!!
+    console.log('(trips/events.js) onSaveUpdatedTrip - Trip ID is: ', tripId)
+    console.log('(trips/events.js) onSaveUpdatedTrip - Data is: ', data)
 
     // Send AJAX PATCH call to update current trip
-    // tripApi.updateTrip(tripId, data)
-    //   .then(tripUi.updateTripSuccess)
-    //   .catch(tripUi.updateTripFailure)
+    tripApi.updateTrip(tripId, data)
+      .then(tripUi.updateTripSuccess)
+      .catch(tripUi.updateTripFailure)
   } else {
     // Display error text in UPDATE MY TRIP modal footer back to user to fill in
     //  all input fields.
@@ -171,6 +172,7 @@ const showLogMyTripModal = function (event) {
 
 const showAllMyTripsModal = function (event) {
   console.log('this should toggle show-all-my-trips modal')
+  $('#view-trip-history-footer').html('')
   $('#myShowAllMyTripsModal').modal('toggle')
 }
 

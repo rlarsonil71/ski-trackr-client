@@ -5,7 +5,7 @@ const helpers = require('../templates/helpers/helpers')
 
 const showUpdateMyTripTemplate = require('../templates/update-my-trip.handlebars')
 
-const tripApi = require('./api')
+// const tripApi = require('./api')
 
 const errorTextNoCurrentTrips = 'You have no current trips.  Please log a trip!'
 
@@ -100,13 +100,15 @@ const showTripFailure = (error) => {
   console.error(error)
 }
 
-const updateTripSuccess = function (ajaxResponse) {
-  console.log('(trips/ui.js) updateTripSuccess ran!  Data is :', ajaxResponse)
+const updateTripSuccess = function () {
+  console.log('(trips/ui.js) updateTripSuccess ran!')
 
-  // Show updated trip rating to user
-  tripApi.indexTrips()
-    .then(indexTripsSuccess)
-    .catch(indexTripsFailure)
+  // Hide Update-My-Trip modal
+  $('#tempUpdateMyTripError').html('')
+  $('#myUpdateMyTripModal').modal('toggle')
+
+  // Show user alert that the current trip was successfully updated.
+  helpers.showAlert($('#alert-update-trip-id'))
 }
 
 const updateTripFailure = (error) => {

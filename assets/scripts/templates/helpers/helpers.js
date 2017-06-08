@@ -6,6 +6,7 @@ const hideAlerts = () => {
   $('#alert-sign-out-id').hide()
   $('#alert-log-trip-on-signin-id').hide()
   $('#alert-new-trip-id').hide()
+  $('#alert-update-trip-id').hide()
 }
 
 const showAlert = function (message) {
