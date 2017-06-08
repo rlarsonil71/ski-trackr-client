@@ -2,7 +2,7 @@
 
   <div class="tripWrapper" data-id="{{trip.id}}">
     <div class="tripDate" id="tripDate{{trip.id}}">
-      Trip Date: {{trip.tripDate}}
+      Trip Date: {{date trip.tripDate}}
     </div>
     <div class="resort" id="resort{{trip.id}}">
       Resort: {{trip.resort}}
@@ -23,8 +23,8 @@
       How did the day go?: {{trip.comments}}
     </div>
     <div class="updateAndRemoveBtn">
-      <button class="setTripUpdateBtn btn btn-primary btn-xs" id="{{trip.id}}" data-id="{{trip.id}}">Update Trip</button>
-      <button class="removeFromTripHistoryBtn glyphicon glyphicon-trash" id="{{trip.id}}" data-id="{{trip.id}}"></button>
+      <button class="setUpdateTripBtn btn btn-primary btn-xs" id="{{trip.id}}" data-id="{{trip.id}}">Update Trip</button>
+      <button class="removeTripFromMyTripListBtn glyphicon glyphicon-trash" id="{{trip.id}}" data-id="{{trip.id}}"></button>
     </div><br><hr />
   </div>
 
