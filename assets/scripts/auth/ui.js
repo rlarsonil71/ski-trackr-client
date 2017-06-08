@@ -37,8 +37,8 @@ const signInSuccess = (ajaxResponse) => {
   $('#sign-up-modal').hide()
   $('#sign-in-modal').hide()
 
-  // Upon successful SIGN IN, show Trip dropdown modal
-  $('#trip-dropdown-modal').show()
+  // Upon successful SIGN IN, show Trip dropdown menu
+  $('#trip-dropdown-menu').show()
 
   console.log('(auth/ui.js) signInSuccess ran!  Data is :', ajaxResponse)
 
@@ -110,8 +110,8 @@ const signOutSuccess = () => {
   $('#chng-pw-modal').hide()
   $('#sign-out-modal').hide()
 
-  // Upon successful SIGN OUT, hide Trip dropdown modal
-  $('#trip-dropdown-modal').hide()
+  // Upon successful SIGN OUT, hide Trip dropdown menu
+  $('#trip-dropdown-menu').hide()
 
   console.log('(auth/ui.js) signOutSuccess ran!  Nothing was returned')
 

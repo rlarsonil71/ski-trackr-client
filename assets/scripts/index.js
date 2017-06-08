@@ -41,8 +41,8 @@ $(() => {
   $('#sign-up-modal').show()
   $('#sign-in-modal').show()
 
-  // Upon page load, hide Trip dropdown modal
-  $('#trip-dropdown-modal').hide()
+  // Upon page load, hide Trip dropdown menu
+  $('#trip-dropdown-menu').hide()
 
   // Upon page load, hide Alert Id popup text messages
   helpers.hideAlerts()
