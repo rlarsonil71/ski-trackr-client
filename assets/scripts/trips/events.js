@@ -10,10 +10,10 @@ const store = require('../store')
 const onCreateTrip = function (event) {
   event.preventDefault()
 
-  console.log('(trips/events.js) onCreateTrip ran!')
+  // console.log('(trips/events.js) onCreateTrip ran!')
 
   const data = getFormFields(event.target)
-  console.log('(trips/events.js) onCreatePlayer Data: ', data)
+  // console.log('(trips/events.js) onCreateTrip Data: ', data)
 
   // Need to get FILLED IN `trip` object so that it can be passed to tripApi
   //  that will do a CREATE (POST) of that trip to the database
@@ -26,7 +26,7 @@ const onCreateTrip = function (event) {
     (data.trip.numberOfRuns[0]) &&
     (data.trip.favoriteRun[0]) &&
     (data.trip.comments[0])) {
-    console.log('(trips/events.js) onCreateTrip - All data entered!')
+    // console.log('(trips/events.js) onCreateTrip - All data entered!')
 
     const todayDate = new Date().toJSON().slice(0, 10).replace(/-/g, '/')
     // This converts the string version of date to an actual date version for
@@ -36,13 +36,13 @@ const onCreateTrip = function (event) {
     if (tripEnteredDate > todayDate) { // Can't create a trip after TODAY
       // Display error text in LOG MY TRIP modal footer back to user to select a
       //  date that is today's date or a previous date.
-      console.log('(trips/events.js) Invalid entered date! ' + tripEnteredDate + ' > ' + todayDate + ' (today)')
+      // console.log('(trips/events.js) Invalid entered date! ' + tripEnteredDate + ' > ' + todayDate + ' (today)')
       tripUserText.logMyTripFutureDateError()
       return
     }
 
     // Set formatted trip entered date to data.trip.tripDate for rendering
-    console.log('(trips/events.js) Trip Date: ' + data.trip.tripDate + ' Trip Entered Date: ' + tripEnteredDate)
+    // console.log('(trips/events.js) Trip Date: ' + data.trip.tripDate + ' Trip Entered Date: ' + tripEnteredDate)
 
     // data.trip.tripDate = tripEnteredDate
     // console.log('(trips/events.js) Trip Date: ', data.trip.tripDate)
@@ -62,7 +62,7 @@ const onCreateTrip = function (event) {
 
 const onIndexTrips = function (event) {
   event.preventDefault()
-  console.log('(trips/events.js) onIndexTrips ran!')
+  // console.log('(trips/events.js) onIndexTrips ran!')
 
   // Display the Show-All-My-Trips-Modal
   // $('#myShowAllMyTripsModal').modal('toggle')
@@ -75,7 +75,7 @@ const onIndexTrips = function (event) {
 
 const onUpdateTrip = function (tripId) {
   // event.preventDefault()
-  console.log('(trips/events.js) onUpdateTrip ran!')
+  // console.log('(trips/events.js) onUpdateTrip ran!')
 
   // Get trip data from API for passed in (user selected) `tripId`
   // If successful, tripUi.showTripSuccess function will be called which will
@@ -95,8 +95,8 @@ const onSaveUpdatedTrip = function (event) {
   const tripId = store.trip.id
   const data = getFormFields(event.target)
 
-  console.log('(trips/events.js) onSaveUpdatedTrip - Trip ID is: ', tripId)
-  console.log('(trips/events.js) onSaveUpdatedTrip - Data is: ', data)
+  // console.log('(trips/events.js) onSaveUpdatedTrip - Trip ID is: ', tripId)
+  // console.log('(trips/events.js) onSaveUpdatedTrip - Data is: ', data)
 
   // If the first character of ALL `trip` fields have data, check for valid entered date
   if ((data.trip.tripDate[0]) &&
@@ -106,7 +106,7 @@ const onSaveUpdatedTrip = function (event) {
     (data.trip.numberOfRuns[0]) &&
     (data.trip.favoriteRun[0]) &&
     (data.trip.comments[0])) {
-    console.log('(trips/events.js) onSaveUpdatedTrip - All data entered!')
+    // console.log('(trips/events.js) onSaveUpdatedTrip - All data entered!')
 
     const todayDate = new Date().toJSON().slice(0, 10).replace(/-/g, '/')
     // This converts the string version of date to an actual date version for
@@ -116,23 +116,23 @@ const onSaveUpdatedTrip = function (event) {
     if (tripEnteredDate > todayDate) { // Can't create a trip after TODAY
       // Display error text in LOG MY TRIP modal footer back to user to select a
       //  date that is today's date or a previous date.
-      console.log('(trips/events.js) onSaveUpdatedTrip - Invalid entered date! ' + tripEnteredDate + ' > ' + todayDate + ' (today)')
+      // console.log('(trips/events.js) onSaveUpdatedTrip - Invalid entered date! ' + tripEnteredDate + ' > ' + todayDate + ' (today)')
       tripUserText.updateMyTripFutureDateError()
       return
     }
 
     // Set formatted trip entered date to data.trip.tripDate for rendering
-    console.log('(trips/events.js) Trip Date: ' + data.trip.tripDate + ' Trip Entered Date: ' + tripEnteredDate)
+    // console.log('(trips/events.js) Trip Date: ' + data.trip.tripDate + ' Trip Entered Date: ' + tripEnteredDate)
 
     // data.trip.tripDate = tripEnteredDate
     // console.log('(trips/events.js) Trip Date: ', data.trip.tripDate)
 
     tripUserText.updateMyTripSuccess()
 
-    console.log('(trips/events.js) onSaveUpdatedTrip - Ready to call UPDATE AJAX PATCH for trip!')
+    // console.log('(trips/events.js) onSaveUpdatedTrip - Ready to call UPDATE AJAX PATCH for trip!')
 
-    console.log('(trips/events.js) onSaveUpdatedTrip - Trip ID is: ', tripId)
-    console.log('(trips/events.js) onSaveUpdatedTrip - Data is: ', data)
+    // console.log('(trips/events.js) onSaveUpdatedTrip - Trip ID is: ', tripId)
+    // console.log('(trips/events.js) onSaveUpdatedTrip - Data is: ', data)
 
     // Send AJAX PATCH call to update current trip
     tripApi.updateTrip(tripId, data)
@@ -147,7 +147,7 @@ const onSaveUpdatedTrip = function (event) {
 
 const onDeleteTrip = function (event) {
   event.preventDefault()
-  console.log('(trips/events.js) onDeleteTrip ran!')
+  // console.log('(trips/events.js) onDeleteTrip ran!')
 
   const tripId = $(this).data('id')
   tripApi.deleteTrip(tripId)
@@ -158,20 +158,20 @@ const onDeleteTrip = function (event) {
 // reset history modal?
 const onHistoryClose = function (event) {
   event.preventDefault()
-  console.log('modal history closed')
+  // console.log('modal history closed')
   store.trips = null
   $(this).removeData('bs.modal')
   $('#view-trip-history-footer').html(' ')
 }
 
 const showLogMyTripModal = function (event) {
-  console.log('this should toggle log-my-trip modal')
+  // console.log('this should toggle log-my-trip modal')
   $('#tempLogMyTripError').html('')
   $('#myLogMyTripModal').modal('toggle')
 }
 
 const showAllMyTripsModal = function (event) {
-  console.log('this should toggle show-all-my-trips modal')
+  // console.log('this should toggle show-all-my-trips modal')
   $('#view-trip-history-footer').html('')
   $('#myShowAllMyTripsModal').modal('toggle')
 }
@@ -180,20 +180,20 @@ const showUpdateMyTripModal = function (event) {
   // Hide Show-All-My-Trips modal
   showAllMyTripsModal()
 
-  console.log('this should toggle update-my-trip modal')
+  // console.log('this should toggle update-my-trip modal')
   $('#tempUpdateMyTripError').html('')
   $('#myUpdateMyTripModal').modal('toggle')
 
   // const tripId = $(this).data('id')  --- SAME as event.target.id
   const tripId = event.target.id
-  console.log('(trips/events.js) showUpdateMyTripModal - ID is: ', tripId)
+  // console.log('(trips/events.js) showUpdateMyTripModal - ID is: ', tripId)
 
   // Show Update My Trip modal to have user update data about selected trip
   onUpdateTrip(tripId)
 }
 
 const addTripHandlers = () => {
-  console.log('(trips/events.js) Setting click handlers')
+  // console.log('(trips/events.js) Setting click handlers')
 
   // Set up TRIP resource modal click event handlers
   $('#log-my-trip-modal').on('click', showLogMyTripModal)
@@ -208,7 +208,7 @@ const addTripHandlers = () => {
   // *** TBD ***
   // Set up event handler for VIEW TRIP HISTORY
   //
-  // $('#select-view-trip-history-btn').on('click', onIndexTrips)
+  // $('#select-view-trip-history-btn').on('click', onViewTripHistory)
 
   // Set up click event handler to show Update My Trip modal
   // Need to use `document` as the `.setUpdateTripBtn` selector is built using

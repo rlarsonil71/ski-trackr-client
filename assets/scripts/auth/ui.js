@@ -3,12 +3,10 @@
 const store = require('../store')
 const helpers = require('../templates/helpers/helpers')
 
-// const productEvents = require('../products/events.js')
-// const orderUi = require('../orders/ui.js')
 const authUserText = require('./userText')
 
 const signUpSuccess = (ajaxResponse) => {
-  console.log('(auth/ui.js) signUpSuccess ran!  Data is :', ajaxResponse)
+  // console.log('(auth/ui.js) signUpSuccess ran!  Data is :', ajaxResponse)
 
   // Clear modal body text in SIGN UP modal
   $('#sign-up').trigger('reset')
@@ -19,7 +17,7 @@ const signUpSuccess = (ajaxResponse) => {
 }
 
 const signUpFailure = (error) => {
-  console.log('(auth/ui.js) Sign-up failure! Error is :', error)
+  // console.log('(auth/ui.js) Sign-up failure! Error is :', error)
   console.error(error)
 
   // Clear modal body text in SIGN UP modal
@@ -27,8 +25,6 @@ const signUpFailure = (error) => {
 }
 
 const signInSuccess = (ajaxResponse) => {
-  // store.cart = { products: [] }
-
   // Upon successful SIGN IN, show Change Password and Sign Out dropdown menu options
   $('#chng-pw-modal').show()
   $('#sign-out-modal').show()
@@ -40,16 +36,14 @@ const signInSuccess = (ajaxResponse) => {
   // Upon successful SIGN IN, show Trip dropdown menu
   $('#trip-dropdown-menu').show()
 
-  console.log('(auth/ui.js) signInSuccess ran!  Data is :', ajaxResponse)
+  // console.log('(auth/ui.js) signInSuccess ran!  Data is :', ajaxResponse)
 
   // Close SIGN IN modal
   $('#mySignInModal').modal('toggle')
 
   // Store user object
   store.user = ajaxResponse.user
-  console.log('(auth/ui.js) signInSuccess - store is: ', store)
-
-  // const products = store.products
+  // console.log('(auth/ui.js) signInSuccess - store is: ', store)
 
   // Clear modal body text in SIGN IN modal
   $('#sign-in').trigger('reset')
@@ -62,13 +56,10 @@ const signInSuccess = (ajaxResponse) => {
   window.setTimeout(function () {
     helpers.showAlert($('#alert-log-trip-on-signin-id'))
   }, 3000)
-
-  // Show View Order History modal button since user signed in
-  // orderUi.showViewOrderHistoryBtn()
 }
 
 const signInFailure = (error) => {
-  console.log('(auth/ui.js) Sign-in failure!  Error is :', error)
+  // console.log('(auth/ui.js) Sign-in failure!  Error is :', error)
   console.error(error)
 
   // Clear modal body text in SIGN IN modal
@@ -79,7 +70,7 @@ const signInFailure = (error) => {
 }
 
 const changePasswordSuccess = (ajaxResponse) => {
-  console.log('(auth/ui.js) Password successfully changed')
+  // console.log('(auth/ui.js) Password successfully changed')
 
   // Clear modal body text in CHANGE PASSWORD modal
   $('#change-password').trigger('reset')
@@ -91,7 +82,7 @@ const changePasswordSuccess = (ajaxResponse) => {
 }
 
 const changePasswordFailure = (error) => {
-  console.log('(auth/ui.js) Change-Password failure!  Error is :', error)
+  // console.log('(auth/ui.js) Change-Password failure!  Error is :', error)
   console.error(error)
 
   // Clear modal body text in CHANGE PASSWORD modal
@@ -113,29 +104,19 @@ const signOutSuccess = () => {
   // Upon successful SIGN OUT, hide Trip dropdown menu
   $('#trip-dropdown-menu').hide()
 
-  console.log('(auth/ui.js) signOutSuccess ran!  Nothing was returned')
-
-  // clear cart
-  // store.cart = null
+  // console.log('(auth/ui.js) signOutSuccess ran!  Nothing was returned')
 
   // Clear user
   store.user = null
-  console.log('store is: ', store)
+  // console.log('store is: ', store)
 
   // Show user alert that the user has successfully signed out.
   helpers.showAlert($('#alert-sign-out-id'))
-
-  // On sign out, show all products without the `Add to Cart` button for each
-  //  product.
-  // productEvents.onGetAllProducts()
-
-  // On sign out, hide View Order History modal button
-  // orderUi.hideViewOrderHistoryBtn()
 }
 
 const signOutFailure = (error) => {
-  console.log('(auth/ui.js) Sign-out failure!  Error is :', error)
-  console.log(error)
+  // console.log('(auth/ui.js) Sign-out failure!  Error is :', error)
+  console.error(error)
 }
 
 module.exports = {

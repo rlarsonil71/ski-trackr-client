@@ -4,7 +4,7 @@ const config = require('../config')
 const store = require('../store')
 
 const createTrip = (data) => {
-  console.log('(trips/api.js) createTrip - data is ', data)
+  // console.log('(trips/api.js) createTrip - data is ', data)
 
   // store.user is stored in scripts/auth/ui.js -> signInSuccess
   return $.ajax({
@@ -19,9 +19,10 @@ const createTrip = (data) => {
 }
 
 const indexTrips = () => {
-  console.log('(trips/api.js) indexTrips ran!')
-  console.log('user id is: ', store.user.id)
-  console.log('user token is: ', store.user.token)
+  // console.log('(trips/api.js) indexTrips ran!')
+  // console.log('user id is: ', store.user.id)
+  // console.log('user token is: ', store.user.token)
+
   // store.user is stored in scripts/auth/ui.js -> signInSuccess
   return $.ajax({
     url: config.apiOrigin + '/usertrips/' + store.user.id,
@@ -33,7 +34,7 @@ const indexTrips = () => {
 }
 
 const showTrip = (id) => {
-  console.log('(trips/api.js) showTrip - ID: ', id)
+  // console.log('(trips/api.js) showTrip - ID: ', id)
 
   // store.user is stored in scripts/auth/ui.js -> signInSuccess
   return $.ajax({
@@ -46,8 +47,8 @@ const showTrip = (id) => {
 }
 
 const updateTrip = (id, data) => {
-  console.log('(trips/api.js) updateTrip - ID is: ', id)
-  console.log('(trips/api.js) updateTrip - Data is: ', data)
+  // console.log('(trips/api.js) updateTrip - ID is: ', id)
+  // console.log('(trips/api.js) updateTrip - Data is: ', data)
 
   const trip = data
 
@@ -56,8 +57,8 @@ const updateTrip = (id, data) => {
   //     resort: data
   //   }}
 
-  console.log('(trips/api.js) updateTrip - Trip is: ', trip)
-  console.log('(trips/api.js) updateTrip - User token is: ', store.user.token)
+  // console.log('(trips/api.js) updateTrip - Trip is: ', trip)
+  // console.log('(trips/api.js) updateTrip - User token is: ', store.user.token)
 
   // store.user is stored in scripts/auth/ui.js -> signInSuccess
   return $.ajax({
@@ -71,7 +72,7 @@ const updateTrip = (id, data) => {
 }
 
 const deleteTrip = (id) => {
-  console.log('(trips/api.js) deleteTrip - ID: ', id)
+  // console.log('(trips/api.js) deleteTrip - ID: ', id)
 
   // store.user is stored in scripts/auth/ui.js -> signInSuccess
   return $.ajax({

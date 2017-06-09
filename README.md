@@ -9,7 +9,7 @@ Enjoy skiing or snowboarding???
 This application allows a current user once logged into the application to log
 and view their ski or snowboard trips.  It uses a custom Express API to create,
 read, update and delete user trips.  This implementation supports multiple users
-one at a time but only the current user's orders are displayed and are able to
+one at a time but only the current user's trips are displayed and are able to
 be updated and/or deleted.  This application is deployed online at the URL found
 below.
 
@@ -131,7 +131,7 @@ a front-end framework in order to achieve project MVP.
 3.  Add debugger and step through code examining variables and logic.
 4.  Review WDI class notes and previous trainings, labs, and/or studies.
 5.  Google issue (i.e. handlebars, helpers, error msg)
-6.  Open issue in GitHub capstone-product repository.
+6.  Open issue in GitHub capstone-project repository.
 
 ## Coding Standards
 

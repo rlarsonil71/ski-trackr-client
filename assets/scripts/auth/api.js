@@ -4,7 +4,7 @@ const config = require('../config')
 const store = require('../store')
 
 const signUp = (data) => {
-  console.log('auth/api.js (signUp) - (data is ', data)
+  // console.log('auth/api.js (signUp) - (data is ', data)
 
   return $.ajax({
     url: config.apiOrigin + '/sign-up',
@@ -15,7 +15,7 @@ const signUp = (data) => {
 }
 
 const signIn = (data) => {
-  console.log('auth/api.js (signIn) - (data is ', data)
+  // console.log('auth/api.js (signIn) - (data is ', data)
 
   return $.ajax({
     url: config.apiOrigin + '/sign-in',
@@ -26,7 +26,7 @@ const signIn = (data) => {
 }
 
 const changePassword = (data) => {
-  console.log('auth/api.js (changePassword) - (data is ', data)
+  // console.log('auth/api.js (changePassword) - (data is ', data)
 
   // store.user is stored in auth/ui.js -> signInSuccess
   return $.ajax({
@@ -42,7 +42,7 @@ const changePassword = (data) => {
 }
 
 const signOut = () => {
-  console.log('auth/api.js (signOut)')
+  // console.log('auth/api.js (signOut)')
 
   // store.user is stored in ui.js -> signInSuccess
   return $.ajax({

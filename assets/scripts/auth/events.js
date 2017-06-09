@@ -7,10 +7,10 @@ const ui = require('./ui')
 
 const onSignUp = function (event) {
   event.preventDefault()
-  console.log('(auth/events.js) Sign-up ran!')
+  // console.log('(auth/events.js) Sign-up ran!')
 
   const data = getFormFields(event.target)
-  console.log('auth/event.js (onSignUp) Data: ', data)
+  // console.log('auth/event.js (onSignUp) Data: ', data)
 
   // CHECK FOR USER ENTERED PASSWORD MISMATCH in SIGN-UP modal
   if (data.credentials.password === data.credentials.password_confirmation) {
@@ -25,10 +25,10 @@ const onSignUp = function (event) {
 
 const onSignIn = function (event) {
   event.preventDefault()
-  console.log('(auth/events.js) Sign-in ran!')
+  // console.log('(auth/events.js) Sign-in ran!')
 
   const data = getFormFields(event.target)
-  console.log('auth/event.js (onSignIn) Data: ', data)
+  // console.log('auth/event.js (onSignIn) Data: ', data)
 
   api.signIn(data)
     .then(ui.signInSuccess)
@@ -37,10 +37,10 @@ const onSignIn = function (event) {
 
 const onChangePassword = function (event) {
   event.preventDefault()
-  console.log('(auth/events.js) Change Password ran!')
+  // console.log('(auth/events.js) Change Password ran!')
 
   const data = getFormFields(event.target)
-  console.log('auth/event.js (onChangePassword) Data: ', data)
+  // console.log('auth/event.js (onChangePassword) Data: ', data)
 
   api.changePassword(data)
      .then(ui.changePasswordSuccess)
@@ -49,7 +49,7 @@ const onChangePassword = function (event) {
 
 const onSignOut = function (event) {
   event.preventDefault()
-  console.log('(auth/events.js) Sign-out ran!')
+  // console.log('(auth/events.js) Sign-out ran!')
 
   // Don't need to use data object here!
   api.signOut()
