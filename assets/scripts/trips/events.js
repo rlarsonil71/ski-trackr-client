@@ -47,6 +47,13 @@ const onCreateTrip = function (event) {
       return
     }
 
+    if (data.trip.numberOfRuns > 60) {
+      // User entered a number for `numberOfRuns` that existed the max, log error
+      //  and return.
+      tripUserText.logMyTripNumberOfMaxRunsReachedError()
+      return
+    }
+
     // Set formatted trip entered date to data.trip.tripDate for rendering
     // console.log('(trips/events.js) Trip Date: ' + data.trip.tripDate + ' Trip Entered Date: ' + tripEnteredDate)
 
@@ -130,6 +137,13 @@ const onSaveUpdatedTrip = function (event) {
     if (isNaN(data.trip.numberOfRuns)) {
       // User did not enter a number for `numberOfRuns`, log error and return.
       tripUserText.updateMyTripNumberOfRunsNotANumberError()
+      return
+    }
+
+    if (data.trip.numberOfRuns > 60) {
+      // User entered a number for `numberOfRuns` that existed the max, log error
+      //  and return.
+      tripUserText.updateMyTripNumberOfMaxRunsReachedError()
       return
     }
 

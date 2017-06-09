@@ -16,6 +16,10 @@ const logMyTripNumberOfRunsNotANumberError = function () {
   $('#tempLogMyTripError').html('Number of Runs field is not a number.  Please enter a number.')
 }
 
+const logMyTripNumberOfMaxRunsReachedError = function () {
+  $('#tempLogMyTripError').html('Are you crazy?!?!?  Please enter your actual number of runs.')
+}
+
 const updateMyTripSuccess = function () {
   $('#tempUpdateMyTripError').html('')
 }
@@ -32,13 +36,19 @@ const updateMyTripNumberOfRunsNotANumberError = function () {
   $('#tempUpdateMyTripError').html('Number of Runs field is not a number.  Please enter a number.')
 }
 
+const updateMyTripNumberOfMaxRunsReachedError = function () {
+  $('#tempUpdateMyTripError').html('Are you crazy?!?!?  Please enter your actual number of runs.')
+}
+
 module.exports = {
   logMyTripSuccess,
   logMyTripError,
   logMyTripFutureDateError,
   logMyTripNumberOfRunsNotANumberError,
+  logMyTripNumberOfMaxRunsReachedError,
   updateMyTripSuccess,
   updateMyTripError,
   updateMyTripFutureDateError,
-  updateMyTripNumberOfRunsNotANumberError
+  updateMyTripNumberOfRunsNotANumberError,
+  updateMyTripNumberOfMaxRunsReachedError
 }
