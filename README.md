@@ -57,6 +57,10 @@ below.
 
 ## Project Dependencies
 -   [`browser-template`](https://github.com/ga-wdi-boston/browser-template)
+-   [`ski-trackr-api`](https://github.com/ga-wdi-boston/ski-trackr-api)
+-   [`express-api-template`](https://github.com/ga-wdi-boston/express-api-template)
+-   [`express-api-deployment-guide`](https://github.com/ga-wdi-boston/express-api-deployment-guide)
+-   [`heroku`](https://dashboard.heroku.com/apps)
 
 ## Client Screenshot
 
@@ -76,11 +80,11 @@ below.
 
 ## List of Servers Used
 
-Front-end:
--  [GRUNT server] (http://localhost:7165/)
+#### Front-End
+-  [`GRUNT server`](http://localhost:7165/)
 
-Back-end EXPRESS server:
--  [ski-trackr-api]  (http://localhost:4741/trips)
+#### Back-end EXPRESS API Server
+-  [`ski-trackr-api`](http://localhost:4741/trips)
 
 ## Dependencies
 
@@ -182,5 +186,5 @@ as a trip summary stats page to satisfy some user stories mentioned above.
 ## [License](LICENSE)
 
 1.  All content is licensed under a CC­BY­NC­SA 4.0 license.
-1.  All software code is licensed under GNU GPLv3. For commercial use or
+2.  All software code is licensed under GNU GPLv3. For commercial use or
     alternative licensing, please contact legal@ga.co.
