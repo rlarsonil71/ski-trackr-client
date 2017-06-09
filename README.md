@@ -60,7 +60,7 @@ below.
 
 ## Client Screenshot
 
-![Alt text](/assets/images/SkiTrackrClientScreenshot.jpg?raw=true "Ski Trackr Client Screenshot")
+![Alt text](/assets/images/SkiTrackrClientScreenshot.png?raw=true "Ski Trackr Client Screenshot")
 
 ## List of Technologies Used
 
