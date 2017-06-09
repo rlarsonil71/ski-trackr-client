@@ -3,13 +3,18 @@
 # Ski Trackr Client - Capstone
 
 ## Project Description
- *** TBD ***
 
-A template for starting front-end projects. Webpack for `require` system, build
-pipeline, and development server. Boostrap and Handlebars.js included. No
-front-end frameworks included.
+Enjoy skiing or snowboarding???
+
+This application allows a current user once logged into the application to log
+and view their ski or snowboard trips.  It uses a custom Express API to create,
+read, update and delete user trips.  This implementation supports multiple users
+one at a time but only the current user's orders are displayed and are able to
+be updated and/or deleted.  This application is deployed online at the URL found
+below.
 
 ## Project Features
+
 1.  Single page application (SPA) using a custom back end API Express
     implementation written in JavaScript.
 
@@ -38,14 +43,14 @@ front-end frameworks included.
 ## Project Links
 
 #### Front-End Ski-Trackr Client Application URL
--   [`Front-End Client URL`](https://rlarsonil71.github.io/ski-trackr-client/)
+-   [`Front-End Ski-Trackr Client URL`](https://rlarsonil71.github.io/ski-trackr-client/)
 
 #### Heroku API URL
 -   [`Heroku API URL`](https://protected-gorge-95856.herokuapp.com/)
 
 #### GitHub Application Repositories
--   [`Front-End Client`](https://github.com/rlarsonil71/ski-trackr-client)
--   [`Back-End API`](https://github.com/rlarsonil71/ski-trackr-api/)
+-   [`Front-End Client Github Repo`](https://github.com/rlarsonil71/ski-trackr-client)
+-   [`Back-End API Github Repo`](https://github.com/rlarsonil71/ski-trackr-api/)
 
 ## Project Requirements
 -   [`capstone-project`](https://github.com/ga-wdi-boston/capstone-project)
@@ -54,6 +59,7 @@ front-end frameworks included.
 -   [`browser-template`](https://github.com/ga-wdi-boston/browser-template)
 
 ## Client Screenshot
+
 ![Alt text](/assets/images/SkiTrackrClientScreenshot.jpg?raw=true "Ski Trackr Client Screenshot")
 
 ## List of Technologies Used
@@ -71,10 +77,10 @@ front-end frameworks included.
 ## List of Servers Used
 
 Front-end:
- GRUNT server (http://localhost:7165/)
+-  [GRUNT server] (http://localhost:7165/)
 
 Back-end EXPRESS server:
- [ski-trackr-api]  (http://localhost:4741/)
+-  [ski-trackr-api]  (http://localhost:4741/trips)
 
 ## Dependencies
 
@@ -89,8 +95,30 @@ Install with `npm install`.
 Start with `grunt serve`.
 
 ## Planning and Software Design - Development Process
- *** TBD ***
 
+As with all the previous projects, I first read over the project requirements to
+understand what was needed to achieve MVP (minimal viable product).  Once that
+was understand, I thought of a project idea.  I created the wireframes, user
+stories, and ERD.  Once that was complete, I decided to use MongoDB since it is
+more flexible than Postgres to use if I needed to change my resource model.
+From the ERD, I proceeded to design and build the basic backend tables I needed.
+
+I concentrated first on the backend model API working on building and testing CRUD
+CURL scripts for user and trips resource.  Once all CRUD scripts worked successfully
+for user authentication (sign-up, sign-in, change-password, and sign-out) and for
+the trips resource, I used a front-end template that was used in our team project
+to build out the front-end client.  I started building front-end client functionality
+starting with the user authentication functions followed by logging and viewing
+ski and snowboard trip entries.
+
+I tried to build more on Bootstrap such as using a Navbar, modals and dropdown
+menus.  I added a date picker to the `log my trip` and `update my trip` modal
+forms.  I added user edits throughout the application showing alerts to the user
+which are rendered below the navbar.
+
+I experimented with Angular user authentication, components and interfaces but
+due to project time constraints, proceeded to use the browser-template without
+a front-end framework in order to achieve project MVP.
 
 ## Planning - Problem Solving Strategy
 
@@ -98,8 +126,8 @@ Start with `grunt serve`.
 2.  Add console.log messages to code.
 3.  Add debugger and step through code examining variables and logic.
 4.  Review WDI class notes and previous trainings, labs, and/or studies.
-5.  Google issue (i.e. handlebars)
-6.  Open issue in GitHub team-product repository.
+5.  Google issue (i.e. handlebars, helpers, error msg)
+6.  Open issue in GitHub capstone-product repository.
 
 ## Coding Standards
 
