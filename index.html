@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <title>Ski Trackr</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+
+      <!-- Do not add `link` tags unless you know what you are doing -->
+      <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+
+      <!-- Do not add `script` tags unless you know what you are doing -->
+      <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+      <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+    </head>
+    <body>
+      <!-- Nav bar for trip resource and user authentication -->
+      <nav class="my-navbar navbar navbar-fixed-top">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <div class="my-app-name" href="#">Ski Trackr</div>
+          </div>
+          <ul class="nav navbar-nav navbar-right">
+              <li data-toggle="dropdown" class="dropdown-toggle" id="user-dropdown-menu"><a href="#"><span class="glyphicon glyphicon-user"></span></a></li>
+              <ul class="dropdown-menu">
+                <li id="sign-up-modal"><a href="#">Sign Up</a></li>
+                <li id="sign-in-modal"><a href="#">Sign In</a></li>
+                <li id="chng-pw-modal"><a href="#">Change My Password</a></li>
+                <li id="sign-out-modal"><a href="#">Sign Out</a></li>
+                <!-- <li class="divider"></li> -->
+                <!-- <li id="select-view-trip-history-btn"><a href="#">View My Trip History</a></li> -->
+              </ul>
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+              <li data-toggle="dropdown" class="dropdown-toggle" id="trip-dropdown-menu"><a href="#"><span id="open-snowflake-trip-menu" class="glyphicon glyphicon-asterisk"></span></a></li>
+              <ul class="dropdown-menu">
+                <li id="log-my-trip-modal"><a href="#">Log My Trip</a></li>
+                <li id="show-all-my-trips-modal"><a href="#">Show All My Trips</a></li>
+              </ul>
+          </ul>
+          <span id="user-email-display" class="nav navbar-nav navbar-right user-email-display"></span>
+        </div>
+        <div id="alert-sign-in-id" class="alert alert-success alert-styling">Thanks for signing in!    Enjoy!!</div>
+        <div id="alert-chg-pwd-id" class="alert alert-success alert-styling">Your password has been successfully changed!</div>
+        <div id="alert-sign-out-id" class="alert alert-success alert-styling">You have been logged out!   <br>Let's hope that tomorow is a POWDER day!!</div>
+        <div id="alert-log-trip-on-signin-id" class="alert alert-success alert-styling">Please Log a New Trip or Show All Your Past Trips!</div>
+        <div id="alert-new-trip-id" class="alert alert-success alert-styling">New Trip has been recorded!</div>
+        <div id="alert-update-trip-id" class="alert alert-success alert-styling">Your trip has been successfully updated!</div>
+      </nav>
+      <div class="container-fluid">
+        <!-- START Sign-Up-Modal -->
+        <div class="modal fade" id="mySignUpModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                  <h4 class="modal-title" id="myModalLabel">Sign Up</h4>
+                </div>
+                <div class="modal-body">
+                   <form id="sign-up">
+                     <div class="form-group">
+                       <label for="name">Email</label>
+                       <input type="text" name="credentials[email]" class="form-control" placeholder="Email">
+                       <label for="name">Password</label>
+                       <input type="password" name="credentials[password]" class="form-control" placeholder="Password">
+                       <label for="name">Password Confirmation</label>
+                       <input type="password" name="credentials[password_confirmation]" class="form-control" placeholder="Confirm Password">
+                     </div>
+                     <input type="submit" class="btn btn-default" name="submit" value="Sign up!">
+                     <button type="submit" class="btn btn-default" data-dismiss="modal">Close</button>
+                     <h5 class="form-error" id="tempSignUpError"></h5>
+                   </form>
+                </div>
+              </div>
+            </div>
+        </div>
+        <!-- END Sign-Up-Modal -->
+
+        <!-- START Sign-In-Modal -->
+        <div class="modal fade" id="mySignInModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                  <h4 class="modal-title" id="myModalLabel">Sign In</h4>
+                </div>
+                <div class="modal-body">
+                   <form id="sign-in">
+                     <div class="form-group">
+                       <label for="name">Email</label>
+                       <input type="text" name="credentials[email]" class="form-control" placeholder="Email">
+                       <label for="name">Password</label>
+                       <input type="password" name="credentials[password]" class="form-control" placeholder="Password">
+                     </div>
+                     <input type="submit" class="btn btn-default" name="submit" value="Sign in!">
+                     <button type="submit" class="btn btn-default" data-dismiss="modal">Close</button>
+                     <h5 class="form-error" id="tempSignInError"></h5>
+                   </form>
+                </div>
+              </div>
+            </div>
+        </div>
+        <!-- END Sign-In-Modal -->
+
+        <!-- START Change-Password-Modal -->
+        <div class="modal fade" id="myPwChangeModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                  <h4 class="modal-title" id="myModalLabel">Change Password</h4>
+                </div>
+                <div class="modal-body">
+                   <form id="change-password">
+                     <div class="form-group">
+                       <label for="name">Old Password</label>
+                       <input type="password" name="passwords[old]" class="form-control" placeholder="Old Password">
+                       <label for="name">New Password</label>
+                       <input type="password" name="passwords[new]" class="form-control" placeholder="New Password">
+                     </div>
+                     <input type="submit" class="btn btn-default" name="submit" value="Change Password!">
+                     <button type="submit" class="btn btn-default" data-dismiss="modal">Close</button>
+                     <h5 class="form-error" id="tempChangePasswordError"></h5>
+                   </form>
+                </div>
+              </div>
+            </div>
+        </div>
+        <!-- END Change-Password-Modal -->
+
+        <!-- START Log-My-Trip-Modal -->
+        <div class="modal fade" id="myLogMyTripModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                  <h4 class="modal-title" id="myModalLabel">Log My Trip</h4>
+                </div>
+                <div class="modal-body">
+                   <form id="log-my-trip">
+                     <div class="form-group">
+                       <label for="name">Trip Date</label>
+                       <input id="date" type="date" name="trip[tripDate]" class="form-control" placeholder="Trip Date">
+                       <label for="name">Resort</label>
+                       <input type="text" name="trip[resort]" class="form-control" placeholder="Resort">
+                       <label for="name">Equipment Type</label><br>
+                       <input type="radio" name="trip[equipmentType]" value="Ski" checked> Ski<br>
+                       <input type="radio" name="trip[equipmentType]" value="Snowboard"> Snowboard<br>
+                       <label for="name">Conditions</label>
+                       <input type="text" name="trip[conditions]" class="form-control" placeholder="Conditions">
+                       <label for="name">Number of Runs</label>
+                       <input type="text" name="trip[numberOfRuns]" class="form-control" placeholder="How many runs did you do?">
+                       <label for="name">Favorite Run</label>
+                       <input type="text" name="trip[favoriteRun]" class="form-control" placeholder="What was your favorite run?">
+                       <label for="name">Comments</label>
+                       <input type="text" name="trip[comments]" class="form-control" placeholder="How did it go?">
+                     </div>
+                     <input type="submit" class="btn btn-default" name="submit" value="Log My Trip!">
+                     <button type="submit" class="btn btn-default" data-dismiss="modal">Close</button>
+                     <h5 class="form-error" id="tempLogMyTripError"></h5>
+                   </form>
+                </div>
+              </div>
+            </div>
+        </div>
+        <!-- END Log-My-Trip-Modal -->
+
+        <!-- START Show-All-My-Trips-Modal -->
+        <div class="modal fade" id="myShowAllMyTripsModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                  <h4 class="modal-title" id="myModalLabel">Show All My Trips</h4>
+                </div>
+                <div class="modal-body">
+                  <!-- handlebars to display all trips -->
+                  <div id="display-trips" class="displayAllTripsView"></div>
+                </div>
+                <div class="modal-footer" id="view-trip-history-footer">
+                  <button type="submit" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+              </div>
+            </div>
+        </div>
+        <!-- END Show-All-My-Trips-Modal -->
+
+        <!-- START Update-My-Trip-Modal -->
+        <div class="modal fade" id="myUpdateMyTripModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                  <h4 class="modal-title" id="myModalLabel">Update My Trip</h4>
+                </div>
+                <div class="modal-body">
+                  <!-- handlebars to display Update My Trip form -->
+                  <div id="handlebars-update-my-trip-form" class="updateMyTripView"></div>
+                  <!-- <input type="submit" class="btn btn-default" id="save-update-button" name="submit" value="Update My Trip!"> -->
+                  <button type="submit" class="btn btn-default" data-dismiss="modal">Close</button>
+                  <h5 class="form-error" id="tempUpdateMyTripError"></h5>
+                </div>
+              </div>
+            </div>
+        </div>
+        <!-- END Update-My-Trip-Modal -->
+
+        <!-- START About-Me-Modal -->
+        <div class="modal fade" id="myAboutMeModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                  <h4 class="modal-title" id="myModalLabel">About Me</h4>
+                </div>
+                <div class="modal-body">
+                  <!-- handlebars to display About Me info -->
+                  <div id="handlebars-about-me" class="aboutMeView"></div>
+                </div>
+                <button type="submit" class="btn btn-default" data-dismiss="modal">Close</button>
+              </div>
+            </div>
+        </div>
+        <!-- END About-Me-Modal -->
+      </div>
+      <!--we shouldn't need the below scripts.  Browser template takes care of loading jQuery, boostrap js, etc.-->
+      <!-- Bootstrap core JavaScript
+      ================================================== -->
+      <!-- Placed at the end of the document so the pages load faster -->
+      <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+      <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+      <script src="../../dist/js/bootstrap.min.js"></script> -->
+      <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+      <!-- <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script> -->
+    </body>
+</html>
