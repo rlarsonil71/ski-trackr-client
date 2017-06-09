@@ -53,6 +53,9 @@ const signInSuccess = (ajaxResponse) => {
   // Show user alert that the user has successfully signed in.
   helpers.showAlert($('#alert-sign-in-id'))
 
+  // Show user email on navbar
+  $('#user-email-display').html(store.user.email)
+
   // Show user alert telling user to log a trip or view all trips.
   // DELAY 3 seconds for user to read text in alert before showing new alert
   window.setTimeout(function () {
@@ -114,6 +117,9 @@ const signOutSuccess = () => {
 
   // Show user alert that the user has successfully signed out.
   helpers.showAlert($('#alert-sign-out-id'))
+
+  // Remove user email on navbar
+  $('#user-email-display').html('')
 }
 
 const signOutFailure = (error) => {
