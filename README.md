@@ -1,55 +1,72 @@
 [![General Assembly Logo](https://camo.githubusercontent.com/1a91b05b8f4d44b5bbfb83abac2b0996d8e26c92/687474703a2f2f692e696d6775722e636f6d2f6b6538555354712e706e67)](https://generalassemb.ly/education/web-development-immersive)
 
-# ski-trackr-client
+# Ski Trackr Client - Capstone
 
-## DESCRIPTION
+## Project Description
  *** TBD ***
 
 A template for starting front-end projects. Webpack for `require` system, build
 pipeline, and development server. Boostrap and Handlebars.js included. No
 front-end frameworks included.
 
-## FEATURES
- *** TBD ***
+## Project Features
+1.  Single page application (SPA) using a custom back end API Express
+    implementation written in JavaScript.
 
-# Front-End Client Application URL
- *** TBD ***
+2.  Full user sign up, sign in, change password and sign out authentication
+     with custom back end Express server.
 
+3.  Complete user authentication error handling for user sign up, sign in,
+     change password and sign out to promote user experience.
 
-## GitHub Application Repositories
+4.  Full support of trips resource API AJAX events with custom back end Express
+     server that can create, read, update and delete trips data in
+     a MongoDB database using custom GET, POST, PATCH, and DELETE RESTful
+     requests.  All actions which change data are authenticated and the changed
+     data is "owned" by the current user performing the change.
 
+5.  Use of a Express ORM to create an trips database table structure and
+     interact with the data.
+
+6.  Use of jQuery and Handlebars templates and helpers for DOM manipulation and
+     event handling.
+
+7.  Use of Heroku to maintain backend API using its mLab MongoDB functionality.
+
+8.  Bootstrap Modals, Dropdown menus and Navbar
+
+## Project Links
+
+#### Front-End Ski-Trackr Client Application URL
+-   [`Front-End Client URL`](https://rlarsonil71.github.io/ski-trackr-client/)
+
+#### Heroku API URL
+-   [`Heroku API URL`](https://protected-gorge-95856.herokuapp.com/)
+
+#### GitHub Application Repositories
 -   [`Front-End Client`](https://github.com/rlarsonil71/ski-trackr-client)
 -   [`Back-End API`](https://github.com/rlarsonil71/ski-trackr-api/)
 
-
-## Heroku API URL
-
--   [`Heroku API URL`](TBD)
-
 ## Project Requirements
-
 -   [`capstone-project`](https://github.com/ga-wdi-boston/capstone-project)
 
-
 ## Project Dependencies
-
 -   [`browser-template`](https://github.com/ga-wdi-boston/browser-template)
 
-
-## Installation
-
-Start with `grunt serve`.
+## Client Screenshot
+![Alt text](/assets/images/SkiTrackrClientScreenshot.jpg?raw=true "Ski Trackr Client Screenshot")
 
 ## List of Technologies Used
 
 1.  HTML, CSS, JavaScript
 2.  jQuery, SASS
-3.  Bootstrap modals and drop-down menus
+3.  Bootstrap navbar, modals and drop-down menus
 4.  Handlebars templates
 5.  Express Model/Controller
 6.  AJAX
-7.  Mongoose
-8.  MongoDB
+7.  Heroku with mLab
+8.  Mongoose
+9.  MongoDB
 
 ## List of Servers Used
 
@@ -66,6 +83,10 @@ Install with `npm install`.
 -   [Webpack](https://webpack.github.io)
 -   [Bootstrap](http://getbootstrap.com)
 -   [Handlebars.js](http://handlebarsjs.com)
+
+## Installation
+
+Start with `grunt serve`.
 
 ## Planning and Software Design - Development Process
  *** TBD ***
@@ -121,6 +142,14 @@ Install with `npm install`.
 12.	As a user, I want to view a trip summary showing the average runs per visit.
 13. As a user, I want to view a trip summary showing the most runs in one day.
 
+## Unsolved Problems or Major Hurdles
+
+There are no known problems to date.  The only major hurdle was trying to remember
+MongoDB as well as deal systematically with click and submit event handlers.
+
+When given more time, I will experiment porting the front-end from browser-template
+to a front-end framework preferably Angular as well as add additional features
+as a trip summary stats page to satisfy some user stories mentioned above.
 
 ## [License](LICENSE)
 
