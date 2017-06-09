@@ -15,8 +15,8 @@ below.
 
 This is my final Capstone project for the WDI (Web Development Immersive) LM01 cohort at General Assembly Boston.
 
-Project Start Date: June 5th 2017
-Project End Date: June 9th 2017
+-   Project Start Date: June 5th 2017
+-   Project End Date: June 9th 2017
 
 ## Project Features
 
