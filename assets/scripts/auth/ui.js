@@ -20,6 +20,8 @@ const signUpFailure = (error) => {
   // console.log('(auth/ui.js) Sign-up failure! Error is :', error)
   console.error(error)
 
+  $('#tempSignUpError').html('Email already taken.  Please enter a new username.')
+
   // Clear modal body text in SIGN UP modal
   $('#sign-up').trigger('reset')
 }
