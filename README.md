@@ -177,7 +177,7 @@ a front-end framework in order to achieve project MVP.
 ## Unsolved Problems or Major Hurdles
 
 There are no known problems to date.  The only major hurdles were trying to remember
-MongoDB, controlling user flow showing no user-facing errors as well as deal
+MongoDB, controlling user flow showing no user-facing errors as well as dealing
 systematically with click event handlers for each of the modals and dropdown
 menus as well as the submit event handlers for each of the modal forms.
 
