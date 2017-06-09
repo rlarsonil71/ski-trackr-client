@@ -13,6 +13,11 @@ one at a time but only the current user's trips are displayed and are able to
 be updated and/or deleted.  This application is deployed online at the URL found
 below.
 
+This is my final Capstone project for the WDI (Web Development Immersive) LM01 cohort at General Assembly Boston.
+
+Project Start Date: June 5th 2017
+Project End Date: June 9th 2017
+
 ## Project Features
 
 1.  Single page application (SPA) using a custom back end API Express
