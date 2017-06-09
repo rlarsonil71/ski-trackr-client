@@ -176,12 +176,14 @@ a front-end framework in order to achieve project MVP.
 
 ## Unsolved Problems or Major Hurdles
 
-There are no known problems to date.  The only major hurdle was trying to remember
-MongoDB as well as deal systematically with click and submit event handlers.
+There are no known problems to date.  The only major hurdles were trying to remember
+MongoDB, controlling user flow showing no user-facing errors as well as deal
+systematically with click event handlers for each of the modals and dropdown
+menus as well as the submit event handlers for each of the modal forms.
 
 When given more time, I will experiment porting the front-end from browser-template
 to a front-end framework preferably Angular as well as add additional features
-as a trip summary stats page to satisfy some user stories mentioned above.
+such as a trip summary stats page to satisfy some user stories mentioned above.
 
 ## [License](LICENSE)
 
